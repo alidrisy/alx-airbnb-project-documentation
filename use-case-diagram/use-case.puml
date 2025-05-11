@@ -1,0 +1,58 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor Guest
+actor Host
+actor Admin
+
+rectangle "Airbnb Clone System" {
+  (Sign Up) as signup
+  (Login) as login
+  (Logout) as logout
+  (View Listings) as viewListings
+  (Search Properties) as search
+  (Book Property) as book
+  (Cancel Booking) as cancelBooking
+  (Add Review) as addReview
+  (Manage Profile) as profile
+
+  (List Property) as listProp
+  (Update Property) as updateProp
+  (Delete Property) as deleteProp
+  (View Bookings) as hostBookings
+
+  (Make Payment) as payment
+  (Refund Request) as refund
+
+  (Manage Users) as manageUsers
+  
+  (Manage Listings) as manageListings
+  (View Logs) as logs
+}
+
+Guest --> signup
+Guest --> login
+Guest --> logout
+Guest --> viewListings
+Guest --> search
+Guest --> book
+Guest --> cancelBooking
+Guest --> addReview
+Guest --> profile
+Guest --> payment
+Guest --> refund
+
+Host --> login
+Host --> logout
+Host --> listProp
+Host --> updateProp
+Host --> deleteProp
+Host --> viewListings
+Host --> hostBookings
+Host --> profile
+
+Admin --> manageUsers
+Admin --> manageListings
+Admin --> logs
+@enduml
