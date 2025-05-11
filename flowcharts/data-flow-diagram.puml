@@ -1,0 +1,26 @@
+@startuml
+title User Registration Process - Flowchart
+
+start
+
+:User submits registration form;
+
+:Validate input fields;
+if (Are inputs valid?) then (Yes)
+    :Check if email already exists;
+    if (Email exists?) then (Yes)
+        :Return error: "Email already registered";
+        stop
+    else (No)
+        :Hash the password;
+        :Save user data to the database;
+        :Send confirmation email;
+        :Return success response;
+        stop
+    endif
+else (No)
+    :Return validation errors;
+    stop
+endif
+
+@enduml
