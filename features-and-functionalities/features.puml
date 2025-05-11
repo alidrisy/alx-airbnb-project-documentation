@@ -1,0 +1,36 @@
+@startmindmap
+* Airbnb Clone Backend Features
+** User Authentication
+*** Sign Up
+*** Login
+*** Logout
+*** Password Reset
+** Property Management
+*** Create Listing
+*** Update Listing
+*** Delete Listing
+*** View Listings
+** Booking System
+*** Search Properties
+*** Check Availability
+*** Make Booking
+*** Cancel Booking
+*** View Bookings
+** Payment System
+*** Add Payment Method
+*** Make Payment
+*** View Payment History
+*** Refunds
+** User Profile
+*** View Profile
+*** Edit Profile
+*** Upload Avatar
+** Reviews & Ratings
+*** Leave Review
+*** Edit/Delete Review
+*** View Host/Property Reviews
+** Admin Panel
+*** Manage Users
+*** Manage Listings
+*** View System Logs
+@endmindmap
