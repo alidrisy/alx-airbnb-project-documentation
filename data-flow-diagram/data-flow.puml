@@ -1,0 +1,50 @@
+@startuml
+title Airbnb Clone Backend - Level 1 DFD
+
+actor User
+actor Admin
+actor "Payment Gateway" as PG
+
+rectangle "Register/Login" {
+  (Submit credentials) as submit
+  User --> submit
+  submit --> [Users DB]
+}
+
+rectangle "Property Management" {
+  (Add/View Properties) as properties
+  (Moderate Properties) as moderate
+  User --> properties
+  Admin --> moderate
+  properties --> [Properties DB]
+  moderate --> [Properties DB]
+}
+
+rectangle "Booking Process" {
+  (Create Booking) as booking
+  User --> booking
+  booking --> [Bookings DB]
+}
+
+rectangle "Payment Processing" {
+  (Initiate Payment) as initiate
+  (Confirm Payment) as confirm
+  User --> initiate
+  initiate --> PG
+  PG --> confirm
+  confirm --> [Payments DB]
+}
+
+rectangle "Review System" {
+  (Write Review) as review
+  User --> review
+  review --> [Reviews DB]
+}
+
+database "Users DB" as usersdb
+database "Properties DB" as propertiesdb
+database "Bookings DB" as bookingsdb
+database "Payments DB" as paymentsdb
+database "Reviews DB" as reviewsdb
+
+@enduml
